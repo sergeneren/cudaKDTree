@@ -96,7 +96,7 @@ namespace cukd {
   // default operators on cuda vector types:
   // ==================================================================
 
-
+#ifndef HELPER_MATH_H
   inline __both__ float2 operator-(float2 a, float2 b)
   { return make_float2(a.x-b.x,a.y-b.y); }
   inline __both__ float3 operator-(float3 a, float3 b)
@@ -124,6 +124,7 @@ namespace cukd {
   { return make_float3(max(a.x,b.x),max(a.y,b.y),max(a.z,b.z)); }
   inline __both__ float4 max(float4 a, float4 b)
   { return make_float4(max(a.x,b.x),max(a.y,b.y),max(a.z,b.z),max(a.w,b.w)); }
+#endif
 
   inline std::ostream &operator<<(std::ostream &o, float3 v)
   { o << "(" << v.x << "," << v.y << "," << v.z << ")"; return o; }

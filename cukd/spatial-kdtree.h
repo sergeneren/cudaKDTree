@@ -17,7 +17,9 @@
 #pragma once
 
 #include "builder.h"
+#ifdef __CUDA_ARCH__
 #include <cub/cub.cuh>
+#endif
 #include <cuda.h>
 #include <cuda_runtime_api.h>
 #include <cmath>
